@@ -323,6 +323,20 @@ def reaction_to_dicts(obj, spcs):
 
     return reaction_list
 
+def species_to_yaml_string(spc, names=None, label=""):
+    """
+    Takes an RMG species object (spc), returns a multi-line string
+    in cantera YAML format.
+    """
+
+    yaml = f"""# THIS IS JUST A DUMMY EXAMPLE
+- composition: {H: 2, O: 2}
+    thermo:
+        temperature-range: [200.0, 3500.0]
+        etc...
+"""
+    return yaml
+
 
 def species_to_dict(obj, spc, names=None, label="solvent"):
     """
