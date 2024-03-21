@@ -280,6 +280,18 @@ def get_mech_dict_nonsurface(spcs, rxns, solvent="solvent", solvent_data=None):
 
     return result_dict
 
+def reaction_to_yaml_string(rxn, spcs):
+    """
+    Takes an RMG reaction object (rxn), returns a multi-line string
+    in cantera YAML format.
+    You must also pass it the list of species (spcs) in the RMG model.
+    """
+    # todo: fix this
+    yaml = f"""# THIS IS JUST A DUMMY EXAMPLE
+- equation: H2O2(7) <=> H2(2) + O2(6)  # Reaction 3
+  rate-constant: {A: 660.0, b: 1.62, Ea: 10.84}
+  note: 'Reaction index: Chemkin #3; RMG #2'"""
+    return yaml
 
 def reaction_to_dicts(obj, spcs):
     """
